@@ -73,3 +73,5 @@ gem "bootstrap"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "faker"
+gem "dotenv-rails", groups: [:development, :test]
+gem "cloudinary"

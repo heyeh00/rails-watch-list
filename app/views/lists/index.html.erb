@@ -1,5 +1,9 @@
-<h1>list index</h1>
+<h1>Save any kind of movies</h1>
+<%= link_to "create a movie list", new_list_path %>
 
+<h2>My lists</h2>
 <% @lists.each do |list| %>
+  <%= cl_image_tag(list.image,
+      width: 400, height: 300, crop: :fill) %>
   <h5><%= link_to "#{list.name}", list_path(list) %></h2>
 <% end %>

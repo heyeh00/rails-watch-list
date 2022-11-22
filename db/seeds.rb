@@ -24,7 +24,7 @@ def movies
     movie_poster = "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}"
     movie_rating = movie["vote_average"].to_f
     Movie.create(title: movie_title, overview: movie_overview, poster_url: movie_poster, rating: movie_rating)
-    puts "Created #{movie.title}"
+    puts "Created #{movie_title}"
   end
 end
 

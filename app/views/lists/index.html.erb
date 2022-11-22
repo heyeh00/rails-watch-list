@@ -1,9 +1,11 @@
 <h1>Save any kind of movies</h1>
 <%= link_to "create a movie list", new_list_path %>
 
-<h2>My lists</h2>
+<h2>My Movie lists</h2>
 <% @lists.each do |list| %>
-  <%= cl_image_tag(list.image,
-      width: 400, height: 300, crop: :fill) %>
+  <%# cl_image_tag(list.image, width: 400, height: 300, crop: :fill) %>
+  <% if list.image.attached? %>
+    <%= cl_image_tag list.image.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <h5><%= link_to "#{list.name}", list_path(list) %></h2>
 <% end %>

@@ -24,8 +24,7 @@ class ListsController < ApplicationController
   def edit; end
 
   def update
-    @list = List.update(list_params)
-    if @list
+    if @list.update(list_params)
       redirect_to lists_path
     else
       render :new, status: :unprocessable_entity

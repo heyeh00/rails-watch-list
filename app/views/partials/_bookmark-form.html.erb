@@ -1,5 +1,6 @@
 <%= simple_form_for params[:list_id] do |f| %>
   <%= f.input :comment %>
-
+  <%# <%= f.input :movie_id, collection: funds, prompt: 'Select Movie', label: false, input_html: { multiple: false } %>
+  <%# params[:list_id] %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

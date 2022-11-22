@@ -1,5 +1,6 @@
 <h1>list show</h1>
 <p><%= @list.name %></p>
-<%= link_to "add a movie", new_list_bookmark_path(@list) %>
+<%= link_to "back", root_path %>
+<%= link_to "add a bookmark", new_list_bookmark_path(@list) %>
 <%= link_to "edit", edit_list_path %>
 <%= link_to "delete", @list, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>

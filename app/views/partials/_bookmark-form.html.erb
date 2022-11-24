@@ -1,4 +1,4 @@
-<%= simple_form_for @bookmark[:list_id] = params[:list_id] do |f| %>
+<%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.input :movie_id, collection: @movies %>
   <%= f.submit "Submit", class: "btn btn-primary" %>

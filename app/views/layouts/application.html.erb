@@ -11,6 +11,13 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-light bg-light">
+    <a href=<%= root_path %> class="navbar-brand">Navbar</a>
+    <div class="navbar-lewagon">
+      <%# <a href="#" class="navbar-link">My lists</a> %>
+      <a href=<%= new_list_path %> class="navbar-link">New List</a>
+    </div>
+  </nav>
     <%= yield %>
   </body>
 </html>

@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @bookmarks = @list.bookmarks
   end
 
   def new
@@ -15,7 +16,7 @@ class ListsController < ApplicationController
   def create
     @list = List.create(list_params)
     if @list
-      redirect_to lists_path
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,11 +1,29 @@
-<h1>Save any kind of movies</h1>
-<%= link_to "create a movie list", new_list_path %>
+<h1 class="banner-h1" style="background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 80%), url(https://images.unsplash.com/photo-1478720568477-152d9b164e26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80)">Movie List</h1>
+<div class="container">
 
-<h2>My Movie lists</h2>
-<% @lists.each do |list| %>
-  <%# cl_image_tag(list.image, width: 400, height: 300, crop: :fill) %>
-  <% if list.image.attached? %>
-    <%= cl_image_tag list.image.key, height: 300, width: 400, crop: :fill %>
+<div class="row">
+  <% @lists.each do |list| %>
+    <% if list.image.attached? %>
+      <% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/development/" + list.image.key + ".png"%>
+        <div class="col">
+          <div class="card list-card" style="width: 18rem;">
+            <img class="card-img-top size" src=<%= url %> alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"> <%= list.name %> </p>
+                <%= link_to "see list", list_path(list), class: "btn btn-primary" %>
+              </div>
+          </div>
+        </div>
+    <% end %>
   <% end %>
-  <h5><%= link_to "#{list.name}", list_path(list) %></h2>
-<% end %>
+</div>
+
+  <div class="text-end">
+    <div class="btn btn-primary mt-4">
+      <%= link_to "create a movie list", new_list_path %>
+    </div>
+  </div>
+</div>
+
+
+  <%# cl_image_tag(list.image, width: 400, height: 300, crop: :fill) %>

@@ -1,5 +1,8 @@
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name %>
-  <%= f.input :image, as: :file %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, label: 'List name', placeholder: "Best Tom Cruise Movies" %>
+    <%# f.input :image, as: :file, label: 'Upload cover image' %>
+    <%= f.input :image, as: :attachment_preview, label: 'Upload cover image:' %>
+    <div class="text-end"><%= f.submit "Submit", class: "btn btn-primary" %></div>
+  <% end %>
+</div>

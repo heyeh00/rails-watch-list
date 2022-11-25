@@ -1,3 +1,5 @@
-<h1>bookmark new</h1>
-<%= render "partials/bookmark-form" %>
-<%= link_to "back", list_path(@list) %>
+<% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/production/" + @list.image.key + ".png"%>
+<div class="container">
+  <h1 class="banner-show" style="background-image: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(255,255,255,0) 100%), url(<%= url %>)"><%= @list.name %></h1>
+  <%= render "partials/bookmark-form" %>
+</div>

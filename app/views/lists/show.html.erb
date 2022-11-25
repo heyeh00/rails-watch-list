@@ -1,5 +1,5 @@
-<% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/development/" + @list.image.key + ".png"%>
-<h1 class="banner-show" style="background-image: url(<%= url %>)"><%= @list.name %></h1>
+<% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/production/" + @list.image.key + ".png"%>
+<h1 class="banner-show" style="background-image: linear-gradient(90deg, rgba(0,0,0,1) 10%, rgba(255,255,255,0) 100%), url(<%= url %>)"><%= @list.name %></h1>
 
 <div class="container">
 
@@ -17,9 +17,7 @@
           </div>
           <div class="card-body">
             <%= link_to "Delete", bookmark, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            <%= "list_id: #{bookmark.list_id}" %>
-            <%= "bookmark_id: #{bookmark.id}" %>
-            <%= link_to "Edit", edit_list_bookmark_path(bookmark) %>
+            <%= link_to "Edit", edit_list_bookmark_path(bookmark.list_id, bookmark.id) %>
           </div>
         </div>
       </div>

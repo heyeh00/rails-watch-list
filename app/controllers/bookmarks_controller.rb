@@ -26,7 +26,7 @@ class BookmarksController < ApplicationController
 
   def update
     if @bookmark.update(bookmark_params)
-      redirect_to list_path(@list)
+      redirect_to list_path(@bookmark.list)
     else
       render :new, status: :unprocessable_entity
     end

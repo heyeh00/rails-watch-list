@@ -4,7 +4,7 @@
 <div class="row">
   <% @lists.each do |list| %>
     <% if list.image.attached? %>
-      <% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/development/" + list.image.key + ".png"%>
+      <% url = "https://res.cloudinary.com/drnd8p2zh/image/upload/v1669136077/production/" + list.image.key + ".png"%>
         <div class="col">
           <div class="card list-card" style="width: 18rem;">
             <img class="card-img-top size" src=<%= url %> alt="Card image cap">
